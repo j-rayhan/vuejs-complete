@@ -33,7 +33,8 @@
       {{ gender }} <br />
       <h1>Social</h1>
       <a :href="facebook.url" v-bind:title="facebook.title">{{ facebook.name }}</a> <br />
-      <a v-bind:href="youtube.url" :title="youtube.title">{{ youtube.name }}</a>
+      <a v-bind:href="youtube.url" :title="youtube.title">{{ youtube.name }}</a> <br />
+      <div class="text-success" v-bind:class="{'text-danger': hasError}">This is css class binding example</div>
     </div>
     <!-- built files will be auto injected -->
   </body>
@@ -41,6 +42,7 @@
     var app = new Vue({
       el: '#app',
       data: {
+        hasError: true,
         message: 'Hello Vue!',
         name: '',
         country: '',
@@ -51,4 +53,8 @@
       }
     })
   </script>
+  <style>
+    .text-success { color: green }
+    .text-danger { color: red;}
+  </style>
 </html>
