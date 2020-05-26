@@ -22,7 +22,12 @@
         <option value="uk">UK</option>
         <option value="usa">USA</option>
       </select> <br />
-      {{ country }}
+      {{ country }} <br />
+      <input type="checkbox" name="html" id="html" value="html" v-model="skill" /> <label for="html">HTML</label> <br />
+      <input type="checkbox" name="css" id="css" value="css" v-model="skill" /> <label for="css">CSS</label> <br />
+      <input type="checkbox" name="vue" id="vue" value="vue" v-model="skill" /> <label for="vue">VUE</label>
+      <h3>Skill's</h3>
+      {{ skill }}
     </div>
     <!-- built files will be auto injected -->
   </body>
@@ -32,7 +37,8 @@
       data: {
         message: 'Hello Vue!',
         name: '',
-        country: ''
+        country: '',
+        skill: [],
       }
     })
   </script>
