@@ -30,7 +30,10 @@
       {{ skill }} <br />
       Gender: <input type="radio" name="gender" id="male" value="male" v-model="gender" /> <label for="male">Male</label>
       <input type="radio" name="gender" id="female" value="female" v-model="gender"> <label for="female">Female</label><br />
-      {{ gender }}
+      {{ gender }} <br />
+      <h1>Social</h1>
+      <a :href="facebook.url" v-bind:title="facebook.title">{{ facebook.name }}</a> <br />
+      <a v-bind:href="youtube.url" :title="youtube.title">{{ youtube.name }}</a>
     </div>
     <!-- built files will be auto injected -->
   </body>
@@ -42,7 +45,9 @@
         name: '',
         country: '',
         skill: [],
-        gender: ''
+        gender: '',
+        facebook: { name: 'Facebook', title: 'Facebook page title', url: 'https://facebook.com'},
+        youtube: { name: 'Youtube', title: 'Youtube channel title', url: 'https://youtube.com'}
       }
     })
   </script>
