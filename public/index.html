@@ -16,7 +16,13 @@
     <div id="app">
       {{ message }} <br />
       <input type="text" name="name" id="name" v-model="name"> <br />
-      {{ name }}
+      {{ name }}  <br/>
+      <select name="country" id="country" v-model="country">
+        <option value="bangladesh">Bangladesh</option>
+        <option value="uk">UK</option>
+        <option value="usa">USA</option>
+      </select> <br />
+      {{ country }}
     </div>
     <!-- built files will be auto injected -->
   </body>
@@ -25,7 +31,8 @@
       el: '#app',
       data: {
         message: 'Hello Vue!',
-        name: ''
+        name: '',
+        country: ''
       }
     })
   </script>
