@@ -35,6 +35,7 @@
       <a :href="facebook.url" v-bind:title="facebook.title">{{ facebook.name }}</a> <br />
       <a v-bind:href="youtube.url" :title="youtube.title">{{ youtube.name }}</a> <br />
       <div class="text-success" v-bind:class="{'text-danger': hasError}">This is css class binding example</div>
+      <div :style="styleObj">This is inline style example</div>
     </div>
     <!-- built files will be auto injected -->
   </body>
@@ -49,7 +50,12 @@
         skill: [],
         gender: '',
         facebook: { name: 'Facebook', title: 'Facebook page title', url: 'https://facebook.com'},
-        youtube: { name: 'Youtube', title: 'Youtube channel title', url: 'https://youtube.com'}
+        youtube: { name: 'Youtube', title: 'Youtube channel title', url: 'https://youtube.com'},
+        styleObj: {
+          color: 'blue',
+          background: '#999999',
+          fontSize: '30px'
+        }
       }
     })
   </script>
