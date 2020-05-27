@@ -48,6 +48,15 @@
       <h3>Add new skill</h3>
       <input type="text" id="skill" v-model="newName" />
       <button id="button" type="submit" v-on:click="addName">Submit</button>
+      <hr />
+      <h2>All Task</h2>
+      <ul>
+        <li v-for="task in tasks">{{ task.title }}</li>
+      </ul>
+      <h2>Incompleted Task</h2>
+      <ul>
+        <li v-for="task in incompletedTask">{{ task.title }}</li>
+      </ul>
     </div>
     <!-- built files will be auto injected -->
   </body>
@@ -55,6 +64,13 @@
     var app = new Vue({
       el: '#app',
       data: {
+        tasks: [
+          {title: 'React', completed: true},
+          {title: 'React Native', completed: false},
+          {title: 'Next', completed: true},
+          {title: 'Vue', completed: true},
+          {title: 'Nuxt', completed: false},
+        ],
         newName: '',
         hasError: true,
         message: 'Hello Vue!',
@@ -73,6 +89,9 @@
       computed: {
         reverseMessage(){
           return this.message.split('').reverse().join('');
+        },
+        incompletedTask(){
+          return this.tasks.filter(t => !t.completed);
         }
       },
       methods: {
