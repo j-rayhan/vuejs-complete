@@ -67,12 +67,15 @@
           background: '#999999',
           fontSize: '30px'
         }
+      },
+      mounted(){
+        document.querySelector('#button').addEventListener('click', () => {
+          let skill = document.querySelector('#skill');
+          app.skills.push(skill.value);
+          skill.value = '';
+        })
       }
     });
-    document.querySelector('#button').addEventListener('click', () => {
-      let skill = document.querySelector('#skill');
-      app.skills.push(skill.value);
-    })
   </script>
   <style>
     .text-success { color: green }
