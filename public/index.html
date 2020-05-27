@@ -17,6 +17,8 @@
       <p v-once>{{ message }}</p>
       <p>{{ sayHello() }}</p>
       <a v-bind:href="link">google</a>
+      <hr/>
+      <p v-html="htmlLink"></p>
     </div>
     <!-- built files will be auto injected -->
   </body>
@@ -26,6 +28,7 @@
       data: {
         message: 'Hello RAy',
         link: 'https://google.com',
+        htmlLink: '<a href="https://google.com">google</a>'
       },
       methods: {
         sayHello: function () {
