@@ -22,6 +22,7 @@
       <hr />
       <button type="submit" v-on:click="increase">Click Me</button>
       <p>{{ counter }} </p>
+      <p v-on:mousemove="updateCoordinates">Coordinates: {{ x}} / {{ y }}</p>
     </div>
     <!-- built files will be auto injected -->
   </body>
@@ -30,6 +31,8 @@
       el: '#app',
       data: {
         counter: 0,
+        x: 0,
+        y: 0,
         message: 'Hello RAy',
         link: 'https://google.com',
         htmlLink: '<a href="https://google.com">google</a>'
@@ -41,6 +44,10 @@
         },
         increase: function () {
           this.counter++;
+        },
+        updateCoordinates: function(e){
+          this.x = e.clientX;
+          this.y = e.clientY;
         }
       }
     });
