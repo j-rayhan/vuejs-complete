@@ -15,6 +15,7 @@
     </noscript>
     <div id="app">
       {{ message }} <br />
+      Reverse Message: {{ reverseMessage }}<br />
       <input type="text" name="name" id="name" v-model="name"> <br />
       {{ name }}  <br/>
       <select name="country" id="country" v-model="country">
@@ -67,6 +68,11 @@
           color: 'blue',
           background: '#999999',
           fontSize: '30px'
+        }
+      },
+      computed: {
+        reverseMessage(){
+          return this.message.split('').reverse().join('');
         }
       },
       methods: {
