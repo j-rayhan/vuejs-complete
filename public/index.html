@@ -7,56 +7,15 @@
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title>vue-test</title>
     <!-- development version, includes helpful console warnings -->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="vue.js"></script>
   </head>
   <body>
     <noscript>
       <strong>We're sorry but vue-test doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app">
-      {{ message }} <br />
-      Reverse Message: {{ reverseMessage }}<br />
-      <input type="text" name="name" id="name" v-model="name"> <br />
-      {{ name }}  <br/>
-      <select name="country" id="country" v-model="country">
-        <option value="bangladesh">Bangladesh</option>
-        <option value="uk">UK</option>
-        <option value="usa">USA</option>
-      </select> <br />
-      {{ country }} <br />
-      <input type="checkbox" name="html" id="html" value="html" v-model="skills" /> <label for="html">HTML</label> <br />
-      <input type="checkbox" name="css" id="css" value="css" v-model="skills" /> <label for="css">CSS</label> <br />
-      <input type="checkbox" name="vue" id="vue" value="vue" v-model="skills" /> <label for="vue">VUE</label>
-      <h3>Skill's</h3>
-      {{ skills }} <br />
-      Gender: <input type="radio" name="gender" id="male" value="male" v-model="gender" /> <label for="male">Male</label>
-      <input type="radio" name="gender" id="female" value="female" v-model="gender"> <label for="female">Female</label><br />
-      {{ gender }} <br />
-      <h1>Social</h1>
-      <a :href="facebook.url" v-bind:title="facebook.title">{{ facebook.name }}</a> <br />
-      <a v-bind:href="youtube.url" :title="youtube.title">{{ youtube.name }}</a> <br />
-      <div class="text-success" v-bind:class="{'text-danger': hasError}">This is css class binding example</div>
-      <div :style="styleObj">This is inline style example</div>
-      <ul>
-        <li v-for="skill in skills"> {{ skill }}</li>
-      </ul>
-      <h3>Other way</h3>
-      <ul>
-        <li v-for="skill in skills" v-text="skill" />
-      </ul>
-      <br />
-      <h3>Add new skill</h3>
-      <input type="text" id="skill" v-model="newName" />
-      <button id="button" type="submit" v-on:click="addName">Submit</button>
-      <hr />
-      <h2>All Task</h2>
-      <ul>
-        <li v-for="task in tasks">{{ task.title }}</li>
-      </ul>
-      <h2>Incompleted Task</h2>
-      <ul>
-        <li v-for="task in incompletedTask">{{ task.title }}</li>
-      </ul>
+      <p>{{ message }}</p>
+      <p>{{ sayHello() }}</p>
     </div>
     <!-- built files will be auto injected -->
   </body>
@@ -64,53 +23,16 @@
     var app = new Vue({
       el: '#app',
       data: {
-        tasks: [
-          {title: 'React', completed: true},
-          {title: 'React Native', completed: false},
-          {title: 'Next', completed: true},
-          {title: 'Vue', completed: true},
-          {title: 'Nuxt', completed: false},
-        ],
-        newName: '',
-        hasError: true,
-        message: 'Hello Vue!',
-        name: '',
-        country: '',
-        skills: [],
-        gender: '',
-        facebook: { name: 'Facebook', title: 'Facebook page title', url: 'https://facebook.com'},
-        youtube: { name: 'Youtube', title: 'Youtube channel title', url: 'https://youtube.com'},
-        styleObj: {
-          color: 'blue',
-          background: '#999999',
-          fontSize: '30px'
-        }
-      },
-      computed: {
-        reverseMessage(){
-          return this.message.split('').reverse().join('');
-        },
-        incompletedTask(){
-          return this.tasks.filter(t => !t.completed);
-        }
+        message: 'Hello RAy'
       },
       methods: {
-        addName(){
-          this.skills.push(this.newName);
-          this.newName = '';
+        sayHello: function () {
+          return "Hello";
         }
-      },
-      mounted(){
-        // document.querySelector('#button').addEventListener('click', () => {
-        //   let skill = document.querySelector('#skill');
-        //   app.skills.push(skill.value);
-        //   skill.value = '';
-        // })
       }
     });
   </script>
   <style>
-    .text-success { color: green }
-    .text-danger { color: red;}
+    
   </style>
 </html>
