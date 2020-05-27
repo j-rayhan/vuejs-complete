@@ -19,6 +19,9 @@
       <a v-bind:href="link">google</a>
       <hr/>
       <p v-html="htmlLink"></p>
+      <hr />
+      <button type="submit" v-on:click="increase">Click Me</button>
+      <p>{{ counter }} </p>
     </div>
     <!-- built files will be auto injected -->
   </body>
@@ -26,6 +29,7 @@
     var app = new Vue({
       el: '#app',
       data: {
+        counter: 0,
         message: 'Hello RAy',
         link: 'https://google.com',
         htmlLink: '<a href="https://google.com">google</a>'
@@ -34,6 +38,9 @@
         sayHello: function () {
           this.message = 'HEllo booy';
           return this.message;
+        },
+        increase: function () {
+          this.counter++;
         }
       }
     });
