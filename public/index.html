@@ -45,8 +45,8 @@
       </ul>
       <br />
       <h3>Add new skill</h3>
-      <input type="text" id="skill" />
-      <button id="button" type="submit">Submit</button>
+      <input type="text" id="skill" v-model="newName" />
+      <button id="button" type="submit" v-on:click="addName">Submit</button>
     </div>
     <!-- built files will be auto injected -->
   </body>
@@ -54,6 +54,7 @@
     var app = new Vue({
       el: '#app',
       data: {
+        newName: '',
         hasError: true,
         message: 'Hello Vue!',
         name: '',
@@ -68,12 +69,18 @@
           fontSize: '30px'
         }
       },
+      methods: {
+        addName(){
+          this.skills.push(this.newName);
+          this.newName = '';
+        }
+      },
       mounted(){
-        document.querySelector('#button').addEventListener('click', () => {
-          let skill = document.querySelector('#skill');
-          app.skills.push(skill.value);
-          skill.value = '';
-        })
+        // document.querySelector('#button').addEventListener('click', () => {
+        //   let skill = document.querySelector('#skill');
+        //   app.skills.push(skill.value);
+        //   skill.value = '';
+        // })
       }
     });
   </script>
