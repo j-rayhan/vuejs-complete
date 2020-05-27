@@ -14,8 +14,8 @@
       <strong>We're sorry but vue-test doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app">
-      <p>{{ message }}</p>
       <p>{{ sayHello() }}</p>
+      <a v-bind:href="link">google</a>
     </div>
     <!-- built files will be auto injected -->
   </body>
@@ -23,7 +23,8 @@
     var app = new Vue({
       el: '#app',
       data: {
-        message: 'Hello RAy'
+        message: 'Hello RAy',
+        link: 'https://google.com',
       },
       methods: {
         sayHello: function () {
