@@ -15,6 +15,7 @@
     </noscript>
     <div id="app">
       <p v-once>{{ message }}</p>
+      <p>{{ title }}</p>
       <p>{{ sayHello() }}</p>
       <a v-bind:href="link">google</a>
       <hr/>
@@ -36,7 +37,7 @@
       <input type="text" name="keyup" id="keyup" v-on:keyup="alertMe" /><br/>
       <input type="text" name="enterAndspace" id="keyupAndspace" v-on:keyup.enter.space="alertMe" /><br/>
       <a href="https://vuejs.org/v2/guide/events.html#Event-Modifiers"> Vue Event handling</a>
-
+      <input type="text" name="twoWaybuinding" id="twoWaybuinding" v-model="title">
     </div>
     <!-- built files will be auto injected -->
   </body>
@@ -47,6 +48,7 @@
         counter: 0,
         x: 0,
         y: 0,
+        title: '',
         message: 'Hello RAy',
         link: 'https://google.com',
         htmlLink: '<a href="https://google.com">google</a>'
