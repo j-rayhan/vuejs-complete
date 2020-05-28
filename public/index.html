@@ -70,8 +70,16 @@
           return this.counter > 5 ? 'Greater 5' : 'Smaller 5';
         }
       },
+      watch: {
+        counter: function(){
+          let vm = this;
+          setTimeout(() => {
+            vm.counter = 0;
+          }, 2000);
+        }
+      },
       methods: {
-        result() {
+        result: function() {
           console.log('methods');
           
           return this.counter > 5 ? 'Greater 5' : 'Smaller 5';
