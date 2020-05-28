@@ -39,10 +39,10 @@
       <a href="https://vuejs.org/v2/guide/events.html#Event-Modifiers"> Vue Event handling</a>
       <input type="text" name="twoWaybuinding" id="twoWaybuinding" v-model="title"> 
       <hr />
-      <button type="submit" v-on:click="increase">Increase</button>
-      <button type="submit" v-on:click="decrease">Decrease</button>
+      <button type="submit" v-on:click="counter++">Increase</button>
+      <button type="submit" v-on:click="counter--">Decrease</button>
       {{ counter }}
-      {{ result }}
+      {{ result() }}
     </div>
     <!-- built files will be auto injected -->
   </body>
@@ -51,7 +51,6 @@
       el: '#app',
       data: {
         counter: 0,
-        result: '',
         x: 0,
         y: 0,
         title: '',
@@ -60,6 +59,9 @@
         htmlLink: '<a href="https://google.com">google</a>'
       },
       methods: {
+        result() {
+          return this.counter > 5 ? 'Greater 5' : 'Smaller 5';
+        },
         sayHello: function () {
           this.message = 'HEllo booy';
           return this.message;
