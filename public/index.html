@@ -22,7 +22,12 @@
       <hr />
       <button type="submit" v-on:click="increase(2, $event)">Click Me</button>
       <p>{{ counter }} </p>
-      <p v-on:mousemove="updateCoordinates">Coordinates: {{ x}} / {{ y }}</p>
+      <p v-on:mousemove="updateCoordinates">Coordinates: {{ x}} / {{ y }} 
+        - <span v-on:mousemove="dummy">DEAD SPOT</span> 
+        <!-- you can also use empty(remove "dummy") -->
+        - <span v-on:mousemove.stop="">DEAD SPOT 2</span> 
+        - <span v-on:mousemove.stop.prevent="">DEAD SPOT 3</span> 
+      </p>
     </div>
     <!-- built files will be auto injected -->
   </body>
@@ -48,6 +53,9 @@
         updateCoordinates: function(e){
           this.x = e.clientX;
           this.y = e.clientY;
+        },
+        dummy: function(e){
+          e.stopPropagation();
         }
       }
     });
