@@ -22,6 +22,10 @@
       <hr />
       <button type="submit" v-on:click="increase(2, $event)">Click Me</button>
       <p>{{ counter }} </p>
+      <button type="submit" v-on:click="counter++">Click Me</button>
+      <p>{{ counter }} </p>
+      <p>{{ counter * 2 }} </p>
+      <p>{{ counter * 2 > 10 ? 'Greater than 10' : 'Smaller than 10' }} </p>
       <p v-on:mousemove="updateCoordinates">Coordinates: {{ x}} / {{ y }} 
         - <span v-on:mousemove="dummy">DEAD SPOT</span> 
         <!-- you can also use empty(remove "dummy") -->
@@ -32,6 +36,7 @@
       <input type="text" name="keyup" id="keyup" v-on:keyup="alertMe" /><br/>
       <input type="text" name="enterAndspace" id="keyupAndspace" v-on:keyup.enter.space="alertMe" /><br/>
       <a href="https://vuejs.org/v2/guide/events.html#Event-Modifiers"> Vue Event handling</a>
+
     </div>
     <!-- built files will be auto injected -->
   </body>
