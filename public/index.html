@@ -41,8 +41,13 @@
       <hr />
       <button type="submit" v-on:click="counter++">Increase</button>
       <button type="submit" v-on:click="counter--">Decrease</button>
-      {{ counter }}
-      {{ result() }}
+      <button type="submit" v-on:click="secondCounter++">Increase Second</button>
+      <p>
+        {{ counter }} | {{ secondCounter }}
+      </p>
+      <p>
+        {{ result() }} | {{ output }}
+      </p>
     </div>
     <!-- built files will be auto injected -->
   </body>
@@ -51,6 +56,7 @@
       el: '#app',
       data: {
         counter: 0,
+        secondCounter: 0,
         x: 0,
         y: 0,
         title: '',
@@ -58,8 +64,16 @@
         link: 'https://google.com',
         htmlLink: '<a href="https://google.com">google</a>'
       },
+      computed: {
+        output: function(){
+          console.log('computed');
+          return this.counter > 5 ? 'Greater 5' : 'Smaller 5';
+        }
+      },
       methods: {
         result() {
+          console.log('methods');
+          
           return this.counter > 5 ? 'Greater 5' : 'Smaller 5';
         },
         sayHello: function () {
