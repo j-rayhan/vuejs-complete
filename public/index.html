@@ -28,6 +28,9 @@
         - <span v-on:mousemove.stop="">DEAD SPOT 2</span> 
         - <span v-on:mousemove.stop.prevent="">DEAD SPOT 3</span> 
       </p>
+
+      <input type="text" name="keyup" id="keyup" v-on:keyup="alertMe" /><br/>
+      <input type="text" name="enterAndspace" id="keyupAndspace" v-on:keyup.enter.space="alertMe" /><br/>
     </div>
     <!-- built files will be auto injected -->
   </body>
@@ -56,6 +59,9 @@
         },
         dummy: function(e){
           e.stopPropagation();
+        },
+        alertMe: function() {
+          alert('HI')
         }
       }
     });
