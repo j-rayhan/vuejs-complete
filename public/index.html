@@ -61,7 +61,11 @@
         {{ result() }} | {{ output }}
       </p>
       <hr/>
-      <div class="demo"></div>
+      <div 
+        class="demo" 
+        @click="attachRed = !attachRed" 
+        :class="{red: attachRed}">
+      </div>
       <div class="demo"></div>
       <div class="demo"></div>
     </div>
@@ -71,6 +75,7 @@
     var app = new Vue({
       el: '#app',
       data: {
+        attachRed: false,
         counter: 0,
         secondCounter: 0,
         x: 0,
