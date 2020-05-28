@@ -8,6 +8,18 @@
     <title>vue-test</title>
     <!-- development version, includes helpful console warnings -->
     <script src="vue.js"></script>
+    <style>
+      .demo {
+        width: 100px;
+        height: 100px;
+        background-color: #aaa;
+        display: inline-block;
+        margin: 10px;
+      }
+      .red { background-color: red;}
+      .green { background-color: green;}
+      .blue { background-color: blue;}
+    </style>
   </head>
   <body>
     <noscript>
@@ -48,6 +60,10 @@
       <p>
         {{ result() }} | {{ output }}
       </p>
+      <hr/>
+      <div class="demo"></div>
+      <div class="demo"></div>
+      <div class="demo"></div>
     </div>
     <!-- built files will be auto injected -->
   </body>
