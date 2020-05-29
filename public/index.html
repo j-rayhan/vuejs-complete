@@ -64,9 +64,9 @@
       <div 
         class="demo" 
         @click="attachRed = !attachRed" 
-        :class="{red: attachRed}">
+        :class="divClasses">
       </div>
-      <div class="demo"></div>
+      <div class="demo" :class="{red: attachRed}"></div>
       <div class="demo"></div>
     </div>
     <!-- built files will be auto injected -->
@@ -86,6 +86,12 @@
         htmlLink: '<a href="https://google.com">google</a>'
       },
       computed: {
+        divClasses: function() {
+          return {
+            red: this.attachRed,
+            blue: !this.attachRed
+          }
+        },
         output: function(){
           console.log('computed');
           return this.counter > 5 ? 'Greater 5' : 'Smaller 5';
