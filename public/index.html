@@ -17,6 +17,10 @@
       <ul>
         <li v-for="(ingredient, i) in ingredients">{{ ingredient }} ({{ i }})</li>
       </ul>
+      <template v-for="(ingredient, i) in ingredients">
+        <h3>{{ ingredient }}</h3>
+        <h4> {{ i }}</h4>
+      </template>
       <hr/>
       <p v-if="show">You can see me!</p>
       <p v-else>Now you see me!</p>
