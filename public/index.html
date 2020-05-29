@@ -15,6 +15,13 @@
     </noscript>
     <div id="app">
       <ul>
+        <li v-for="person in persons">
+          <div v-for="(value, key, index) in person">
+            {{ key }} : {{ value }} ( {{ index }})
+          </div>
+        </li>
+      </ul>
+      <ul>
         <li v-for="(ingredient, i) in ingredients">{{ ingredient }} ({{ i }})</li>
       </ul>
       <template v-for="(ingredient, i) in ingredients">
@@ -37,6 +44,10 @@
     var app = new Vue({
       el: '#app',
       data: {
+        persons: [
+          {name: 'Ray', age: 25, color: 'red'},
+          {name: 'Jar', age: 28, color: 'blue'},
+        ],
         ingredients: ['meat', 'fruit', 'cookies'],
         show: true
       }
