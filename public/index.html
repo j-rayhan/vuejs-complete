@@ -26,51 +26,7 @@
       <strong>We're sorry but vue-test doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app">
-      <p v-once>{{ message }}</p>
-      <p>{{ title }}</p>
-      <p>{{ sayHello() }}</p>
-      <a :href="link">google</a>
-      <hr/>
-      <p v-html="htmlLink"></p>
-      <hr />
-      <button type="submit" v-on:click="increase(2, $event)">Click Me</button>
-      <p>{{ counter }} </p>
-      <button type="submit" v-on:click="counter++">Click Me</button>
-      <p>{{ counter }} </p>
-      <p>{{ counter * 2 }} </p>
-      <p>{{ counter * 2 > 10 ? 'Greater than 10' : 'Smaller than 10' }} </p>
-      <p v-on:mousemove="updateCoordinates">Coordinates: {{ x}} / {{ y }} 
-        - <span v-on:mousemove="dummy">DEAD SPOT</span> 
-        <!-- you can also use empty(remove "dummy") -->
-        - <span v-on:mousemove.stop="">DEAD SPOT 2</span> 
-        - <span v-on:mousemove.stop.prevent="">DEAD SPOT 3</span> 
-      </p>
-
-      <input type="text" name="keyup" id="keyup" v-on:keyup="alertMe" /><br/>
-      <input type="text" name="enterAndspace" id="keyupAndspace" v-on:keyup.enter.space="alertMe" /><br/>
-      <a href="https://vuejs.org/v2/guide/events.html#Event-Modifiers"> Vue Event handling</a>
-      <input type="text" name="twoWaybuinding" id="twoWaybuinding" v-model="title"> 
-      <hr />
-      <button type="submit" @click="counter++">Increase</button>
-      <button type="submit" @click="counter--">Decrease</button>
-      <button type="submit" @click="secondCounter++">Increase Second</button>
-      <p>
-        {{ counter }} | {{ secondCounter }}
-      </p>
-      <p>
-        {{ result() }} | {{ output }}
-      </p>
-      <hr/>
-      <p>Color : <input type="text" name="color" id="color" v-model="color"/>
-        Width: <input type="text" v-model="width" />
-      </p>
-      <div 
-        class="demo" 
-        :style="{backgroundColor: color}"
-        >
-      </div>
-      <div class="demo" :style="myStyle"></div>
-      <div class="demo" :style="[ myStyle, { height: width + 'px' } ]"></div>
+      
     </div>
     <!-- built files will be auto injected -->
   </body>
@@ -78,72 +34,6 @@
     var app = new Vue({
       el: '#app',
       data: {
-        color: 'gray',
-        width: 100,
-        attachRed: false,
-        counter: 0,
-        secondCounter: 0,
-        x: 0,
-        y: 0,
-        title: '',
-        message: 'Hello RAy',
-        link: 'https://google.com',
-        htmlLink: '<a href="https://google.com">google</a>'
-      },
-      computed: {
-        myStyle: function() {
-          return {
-            'background-color': this.color,
-            width: this.width + 'px'
-          }
-        },
-        divClasses: function() {
-          return {
-            red: this.attachRed,
-            blue: !this.attachRed
-          }
-        },
-        output: function(){
-          console.log('computed');
-          return this.counter > 5 ? 'Greater 5' : 'Smaller 5';
-        }
-      },
-      watch: {
-        counter: function(){
-          let vm = this;
-          setTimeout(() => {
-            vm.counter = 0;
-          }, 2000);
-        }
-      },
-      methods: {
-        result: function() {
-          console.log('methods');
-          
-          return this.counter > 5 ? 'Greater 5' : 'Smaller 5';
-        },
-        sayHello: function () {
-          this.message = 'HEllo booy';
-          return this.message;
-        },
-        increase: function () {
-          this.counter ++;
-          this.result = this.counter > 5 ? 'Greater 5' : 'Smaller 5';
-        },
-        decrease: function () {
-          this.counter --;
-          this.result = this.counter > 5 ? 'Greater 5' : 'Smaller 5';
-        },
-        updateCoordinates: function(e){
-          this.x = e.clientX;
-          this.y = e.clientY;
-        },
-        dummy: function(e){
-          e.stopPropagation();
-        },
-        alertMe: function() {
-          alert('HI')
-        }
       }
     });
   </script>
