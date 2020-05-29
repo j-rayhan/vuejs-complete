@@ -8,25 +8,16 @@
     <title>vue-test</title>
     <!-- development version, includes helpful console warnings -->
     <script src="vue.js"></script>
-    <style>
-      .demo {
-        width: 100px;
-        height: 100px;
-        background-color: #aaa;
-        display: inline-block;
-        margin: 10px;
-      }
-      .red { background-color: red;}
-      .green { background-color: green;}
-      .blue { background-color: blue;}
-    </style>
   </head>
   <body>
     <noscript>
       <strong>We're sorry but vue-test doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app">
-      
+      <p v-if="show">You can see me!</p>
+      <p v-else>Now you see me!</p>
+      <p>Do you also see me?</p>
+      <button type="submit" @click="show = !show">Switch</button>
     </div>
     <!-- built files will be auto injected -->
   </body>
@@ -34,6 +25,7 @@
     var app = new Vue({
       el: '#app',
       data: {
+        show: true
       }
     });
   </script>
