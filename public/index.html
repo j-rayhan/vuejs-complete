@@ -14,6 +14,10 @@
       <strong>We're sorry but vue-test doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app">
+      <ul>
+        <li v-for="ingredient in ingredients">{{ ingredient }}</li>
+      </ul>
+      <hr/>
       <p v-if="show">You can see me!</p>
       <p v-else>Now you see me!</p>
     <template v-if='show'>
@@ -29,6 +33,7 @@
     var app = new Vue({
       el: '#app',
       data: {
+        ingredients: ['meat', 'fruit', 'cookies'],
         show: true
       }
     });
