@@ -61,12 +61,15 @@
         {{ result() }} | {{ output }}
       </p>
       <hr/>
+      <p>Color : <input type="text" name="color" id="color" v-model="color"/>
+        Width: <input type="text" v-model="width" />
+      </p>
       <div 
         class="demo" 
-        @click="attachRed = !attachRed" 
-        :class="divClasses">
+        :style="{backgroundColor: color}"
+        >
       </div>
-      <div class="demo" :class="{red: attachRed}"></div>
+      <div class="demo" :style="myStyle"></div>
       <div class="demo"></div>
     </div>
     <!-- built files will be auto injected -->
@@ -75,6 +78,8 @@
     var app = new Vue({
       el: '#app',
       data: {
+        color: 'gray',
+        width: 100,
         attachRed: false,
         counter: 0,
         secondCounter: 0,
@@ -86,6 +91,12 @@
         htmlLink: '<a href="https://google.com">google</a>'
       },
       computed: {
+        myStyle: function() {
+          return {
+            'background-color': this.color,
+            width: this.width + 'px'
+          }
+        },
         divClasses: function() {
           return {
             red: this.attachRed,
