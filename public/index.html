@@ -15,7 +15,7 @@
     </noscript>
     <div id="app">
       <ul>
-        <li v-for="ingredient in ingredients">{{ ingredient }}</li>
+        <li v-for="(ingredient, i) in ingredients">{{ ingredient }} ({{ i }})</li>
       </ul>
       <hr/>
       <p v-if="show">You can see me!</p>
