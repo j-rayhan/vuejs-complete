@@ -17,16 +17,24 @@
         <div class="small-6 columns">
             <h1 class="text-center">YOU</h1>
             <div class="healthbar">
-                <div class="healthbar text-center" style="background-color: green; margin: 0; color: white;">
-
+                <div 
+                class="healthbar text-center" 
+                style="background-color: green; margin: 0; color: white;"
+                :style="{ width: playerHealth + '%' }"
+                >
+                  {{ playerHealth }}
                 </div>
             </div>
         </div>
         <div class="small-6 columns">
             <h1 class="text-center">MONSTER</h1>
             <div class="healthbar">
-                <div class="healthbar text-center" style="background-color: green; margin: 0; color: white;">
-
+                <div 
+                class="healthbar text-center" 
+                style="background-color: green; margin: 0; color: white;"
+                :style="{ width: monsterHealth + '%' }"
+                >
+                  {{ monsterHealth }}
                 </div>
             </div>
         </div>
@@ -57,19 +65,7 @@
 
     <!-- built files will be auto injected -->
   </body>
-  <script>
-    var app = new Vue({
-      el: '#app',
-      data: {
-        persons: [
-          {name: 'Ray', age: 25, color: 'red'},
-          {name: 'Jar', age: 28, color: 'blue'},
-        ],
-        ingredients: ['meat', 'fruit', 'cookies'],
-        show: true
-      }
-    });
-  </script>
+  <script src="js/app.js"></script>
   <style>
     
   </style>
