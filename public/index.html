@@ -14,14 +14,15 @@
 <body>
 <div id="app1">
     <h2 ref="heading">{{ title }}</h2>
-    <hello></hello>
-    <hello></hello>
+    <!-- <hello></hello> -->
+    <!-- <hello></hello> -->
     <button type="submit" @click="show" ref="myButton">Show paragraph</button>
     <p v-if="showPharagraph">This is not always visible</p>
 </div>
 <div id="app2">
     <h2>{{ title }}</h2>
     <button type="submit" @click="onChange">Change something in vm1 </button>
+    <button type="submit" @click="destroy">Destroy</button>
     <p v-if="showPharagraph">This is not always visible</p>
 </div>
 

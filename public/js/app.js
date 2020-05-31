@@ -3,9 +3,9 @@ let data = {
   showPharagraph: false
 }
 
-Vue.component('hello', {
-  template: '<h2>Hello component!</h2>'
-});
+// Vue.component('hello', {
+//   template: '<h2>Hello component!</h2>'
+// });
 
 let vm1 = new Vue({
  data,
@@ -46,7 +46,18 @@ let mv2 = new Vue({
     title: 'The VueJS second instance',
     showPharagraph: false
   },
+  beforeCreate: function() { console.log('beforeCreate()------------>');},
+  created: function() { console.log('created()------------>');},
+  beforeMount: function() { console.log('beforeMount()------------>');},
+  mounted: function() { console.log('mounted()------------>');},
+  beforeUpdate: function() { console.log('beforeUpdate()------------>');},
+  updated: function() { console.log('updated()------------>');},
+  beforeDestroy: function() { console.log('beforeDestroy()------------>');},
+  destroyed: function() { console.log('destroyed()------------>');},
   methods: {
+    destroy: function() {
+      this.$destroy();
+    },
     onChange: function() {
       this.showPharagraph = true;
       vm1.title = 'The VueJS instance (Update from vm2)'
