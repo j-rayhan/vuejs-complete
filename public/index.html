@@ -12,7 +12,12 @@
     <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
-<div id="app">
+<div id="app1">
+    <h2>{{ title }}</h2>
+    <button type="submit" @click="show">Show paragraph</button>
+    <p v-if="showPharagraph">This is not always visible</p>
+</div>
+<div id="app2">
     <h2>{{ title }}</h2>
     <button type="submit" @click="show">Show paragraph</button>
     <p v-if="showPharagraph">This is not always visible</p>

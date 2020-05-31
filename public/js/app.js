@@ -1,5 +1,5 @@
 new Vue({
- el: '#app',
+ el: '#app1',
  data: {
    title: 'The VueJS instance',
    showPharagraph: false
@@ -11,3 +11,17 @@ new Vue({
    }
  }
 });
+
+new Vue({
+  el: '#app2',
+  data: {
+    title: 'The VueJS second instance',
+    showPharagraph: false
+  },
+  methods: {
+    show: function() {
+      this.showPharagraph = true;
+      this.title = 'The VueJS second instance (Update)'
+    }
+  }
+ });
