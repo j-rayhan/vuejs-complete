@@ -13,8 +13,8 @@
 </head>
 <body>
 <div id="app1">
-    <h2>{{ title }}</h2>
-    <button type="submit" @click="show">Show paragraph</button>
+    <h2 ref="heading">{{ title }}</h2>
+    <button type="submit" @click="show" ref="myButton">Show paragraph</button>
     <p v-if="showPharagraph">This is not always visible</p>
 </div>
 <div id="app2">

@@ -9,7 +9,13 @@ let vm1 = new Vue({
  methods: {
    show: function() {
      this.showPharagraph = true;
-     this.title = 'The VueJS instance (Update)'
+     this.updateTitle('The VueJS instance (Update)');
+     console.log('Button ref instance', this.$refs);
+     this.$refs.myButton.innerText = "TEST";
+     
+   },
+   updateTitle: function(value){
+     this.title = value;
    }
  },
  watch: {
@@ -18,7 +24,7 @@ let vm1 = new Vue({
    }
  }
 });
-
+vm1.$refs.heading.innerText = "Something else!"
 // setTimeout(() => {
 //   vm1.title = "Title changed from timer"
 // }, 3000);
@@ -28,7 +34,7 @@ let vm1 = new Vue({
 // }, 6000);
 
 // vm1.newPro = "New title!"; // I can't use this (We should use Vue constructor)
-console.log('vm1----->',vm1.$data === data);
+// console.log('vm1----->',vm1.$data === data);
 
 let mv2 = new Vue({
   el: '#app2',
