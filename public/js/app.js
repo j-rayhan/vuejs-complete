@@ -4,7 +4,6 @@ let data = {
 }
 
 let vm1 = new Vue({
- el: '#app1',
  data,
  methods: {
    show: function() {
@@ -24,6 +23,7 @@ let vm1 = new Vue({
    }
  }
 });
+vm1.$mount('#app1');
 vm1.$refs.heading.innerText = "Something else!"
 // setTimeout(() => {
 //   vm1.title = "Title changed from timer"
@@ -49,3 +49,9 @@ let mv2 = new Vue({
     }
   }
  });
+
+ let vm3 = new Vue({
+   template: '<h2>HELLO!</h2>'
+ });
+
+ vm3.$mount('#app3');
