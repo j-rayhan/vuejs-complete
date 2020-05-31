@@ -3,6 +3,10 @@ let data = {
   showPharagraph: false
 }
 
+Vue.component('hello', {
+  template: '<h2>Hello component!</h2>'
+});
+
 let vm1 = new Vue({
  data,
  methods: {
@@ -54,4 +58,7 @@ let mv2 = new Vue({
    template: '<h2>HELLO!</h2>'
  });
 
- vm3.$mount('#app3');
+//  vm3.$mount('#app3');
+ // ----- OR -------
+vm3.$mount();
+document.getElementById('app3').appendChild(vm3.$el)
