@@ -21,6 +21,13 @@ setTimeout(() => {
   vm1.title = "Title changed from timer"
 }, 3000);
 
+setTimeout(() => {
+  vm1.show()
+}, 6000);
+
+vm1.newPro = "New title!"; // I can't use this (We should use Vue constructor)
+console.log('vm1----->',vm1);
+
 let mv2 = new Vue({
   el: '#app2',
   data: {
