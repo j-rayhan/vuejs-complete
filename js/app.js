@@ -1,6 +1,6 @@
 // const data = { status: "Critial" }; // it's not the right way to use 
 
-Vue.component('my-tag', {
+const cmp = {
   data: function () {
     return { status: 'Critical'};
   },
@@ -10,8 +10,16 @@ Vue.component('my-tag', {
     }
   },
   template: "<h2>Server Status: {{ status }} (<button @click='changeStatus'>Change</button>)</h2>"
-})
+};
 
 new Vue({
-  el: "#app"
+  el: "#app",
+  components: {
+    'my-tag': cmp
+  }
+})
+
+
+new Vue({
+  el: "#app2"
 })
