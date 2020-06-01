@@ -1,17 +1,15 @@
 <template>
-  <div>
-    <h1>Server status: {{ status }}</h1>
-    <button @click="changeStatus">Change</button>
-  </div>
+    <div class="col-xs-12 col-sm-6">
+        <p>Server Details are currently not updated</p>
+    </div>
+
 </template>
 
 <script>
-export default {
-  data: () => ({status: 'Critical'}),
-  methods: {
-    changeStatus() {
-      this.status = 'Normal';
-    }
-  }
-}
 </script>
+
+<style scoped>
+    div {
+        border: 1px solid red;
+    }
+</style>
