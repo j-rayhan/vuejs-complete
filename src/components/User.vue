@@ -6,7 +6,7 @@
         <hr>
         <div class="row">
             <div class="col-xs-12 col-sm-6">
-                <app-user-detail></app-user-detail>
+                <app-user-detail :name="name"></app-user-detail>
             </div>
             <div class="col-xs-12 col-sm-6">
                 <app-user-edit></app-user-edit>
@@ -20,9 +20,9 @@
     import UserEdit from './UserEdit.vue';
 
     export default {
-        data: () => {
+        data: () => ({
             name: 'Max'
-        },
+        }),
         methods: {
             changeName(){
                 this.name = 'Ray'
