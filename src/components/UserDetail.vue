@@ -34,7 +34,7 @@ export default {
     },
     created() {
         eventBus.$on('ageWasEdit', (age) => {
-            this.userAge = age;
+            this.userAge = age; 
         })
     }
 }
