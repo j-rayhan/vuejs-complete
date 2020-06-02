@@ -2,6 +2,7 @@
     <div class="component">
         <h1>The User Component</h1>
         <p>I'm an awesome User!</p>
+        <button @click="changeName">Change name</button>
         <hr>
         <div class="row">
             <div class="col-xs-12 col-sm-6">
@@ -19,6 +20,14 @@
     import UserEdit from './UserEdit.vue';
 
     export default {
+        data: () => {
+            name: 'Max'
+        },
+        methods: {
+            changeName(){
+                this.name = 'Ray'
+            }
+        },
         components: {
             appUserDetail: UserDetail,
             appUserEdit: UserEdit
