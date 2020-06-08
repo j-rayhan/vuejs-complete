@@ -1,6 +1,12 @@
 <template>
  <div>
+  <div class="title">
   <slot></slot>
+ </div>
+ <hr>
+ <div>
+  <slot></slot>
+ </div>
  </div>
 </template>
 <script>
@@ -18,5 +24,8 @@ export default {
 
  h2 {
   color: red;
+ }
+ .title {
+  font-style: italic;
  }
 </style>
