@@ -1,11 +1,11 @@
 <template>
  <div>
   <div class="title">
-  <slot></slot>
+  <slot name="title"></slot>
  </div>
  <hr>
  <div>
-  <slot></slot>
+  <slot name="content"></slot>
  </div>
  </div>
 </template>
