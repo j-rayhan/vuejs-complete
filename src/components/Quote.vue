@@ -1,0 +1,30 @@
+<template>
+ <div class="col-sm-6 col-md-4 col-lg-3">
+  <div class="panel panel-default">
+   <div class="panel-body quote">
+    
+   </div>
+  </div>
+ </div>
+</template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style>
+ .panel-body {
+  font-family: 'Arizonia', cursive;
+  font-size: 24px;
+  color: #6a6a6a;
+ }
+ .quote {
+  cursor: pointer;
+ }
+ .quote:hover {
+  background-color: #FFe2e2;
+
+ }
+</style>
