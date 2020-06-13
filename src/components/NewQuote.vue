@@ -22,12 +22,16 @@
 <script>
 
 export default {
- data: () => ({
-  quote: ''
- }),
+ data: function () {
+  return {
+   quote: ''
+  }
+ },
  methods: {
   createNew() {
-   
+   console.log('PRINT IN %s=====>','NewQuote', this.quote);
+   this.$emit('quoteAdded', this.quote);
+   this.quote = '';
   }
  }
 }
