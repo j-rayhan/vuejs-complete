@@ -1,24 +1,119 @@
 <template>
   <div class="container">
-      <app-header :quoteCount="quotes.length" :maxQuotes="maxQuotes"></app-header>
-      <app-new-quote @quoteAdded="newQuote"></app-new-quote>
-      <app-quote-grid :quotes="quotes" @quoteDeleted="deleteQuote"></app-quote-grid>
-      <div class="row">
-        <div class="col-sm-12 text-center">
-          <div class="alert alert-info">
-            Inof: Click on a quote to delete it!
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+      <form action="">
+          <h1>File a Complaint</h1>
+          <hr>
+          <div class="form-group">
+            <label for="email">E-mail:</label>
+            <input 
+              type="text"
+              id="email"
+              class="form-control"
+            >
           </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input 
+              type="text" 
+              id="password" 
+              class="form-control"
+            >
+          </div>
+          <div class="form-group">
+            <label for="age">Age:</label>
+            <input 
+              type="number" 
+              id="age" 
+              class="form-control"
+            >
+          </div>
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea 
+            name="message"
+            id="message" 
+            cols="30" 
+            rows="5"
+            class="form-control"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="css">
+              <input 
+                type="checkbox"
+                name="css"
+                id="css"
+                value="css"
+              > CSS
+            </label>
+            <label for="vue">
+              <input 
+                type="checkbox"
+                name="vue"
+                id="vue"
+                value="vue"
+              > VUE
+            </label>
+          </div>
+          <div class="form-group"> Gender: 
+            <label for="male">
+              <input 
+                type="radio"
+                name="gender"
+                id="male"
+                value="Male"
+              > Male
+            </label>
+            <label for="female">
+              <input 
+                type="radio"
+                name="gender"
+                id="female"
+                value="Female"
+              > Female
+            </label>
+          </div>
+          <div class="form-group">
+            <label for="priority">Priority:</label>
+            <select 
+              name="priority" 
+              id="priority" 
+              class="form-control"
+            >
+              <option value=""></option>
+            </select>
+          </div>
+          <button 
+          type="submit" 
+          class="btn btn-primary">
+            Submit
+          </button>
+      </form>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4>Your Data</h4>
+        </div>
+        <div class="panel-body">
+          <p>Mail: </p>
+          <p>Password: </p>
+          <p>Age: </p>
+          <p>Message: </p>
+          <p>For? </p>
+          <ul>
+            <li></li>
+          </ul>
+          <p>Gender: </p>
+          <p>Priority: </p>
         </div>
       </div>
+    </div>
   </div>
 </template>
 
 <script>
-import QuoteGrid from './components/QuoteGrid'
-import NewQuote from './components/NewQuote'
-import Header from './components/Header'
 export default {
-  data: function () {
+  data() {
     return {
       quotes: [
         'Just a quote to see somenting!'
@@ -26,20 +121,6 @@ export default {
       maxQuotes: 10,
     }
   },
-  methods: {
-    newQuote(q){
-      if(this.quotes.length >= this.maxQuotes) return alert('Please delete quotes first!');
-      this.quotes.push(q)
-    },
-    deleteQuote(index){
-      this.quotes.splice(index, 1);
-    }
-  },
-  components: {
-    appHeader: Header,
-    appQuoteGrid: QuoteGrid,
-    appNewQuote: NewQuote
-  }
 }
 </script>
 
