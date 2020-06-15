@@ -9,14 +9,16 @@
             <input 
               type="text"
               id="email"
+              v-model="userData.email"
               class="form-control"
             >
           </div>
           <div class="form-group">
             <label for="password">Password:</label>
             <input 
-              type="text" 
+              type="password" 
               id="password" 
+              v-model="userData.password" 
               class="form-control"
             >
           </div>
@@ -25,6 +27,7 @@
             <input 
               type="number" 
               id="age" 
+              v-model="userData.age" 
               class="form-control"
             >
           </div>
@@ -90,14 +93,15 @@
             Submit
           </button>
       </form>
+      <hr>
       <div class="panel panel-default">
         <div class="panel-heading">
           <h4>Your Data</h4>
         </div>
         <div class="panel-body">
-          <p>Mail: </p>
-          <p>Password: </p>
-          <p>Age: </p>
+          <p>Mail: {{ userData.email }} </p>
+          <p>Password: {{ userData.password }}</p>
+          <p>Age: {{ userData.age }} </p>
           <p>Message: </p>
           <p>For? </p>
           <ul>
@@ -115,10 +119,11 @@
 export default {
   data() {
     return {
-      quotes: [
-        'Just a quote to see somenting!'
-      ],
-      maxQuotes: 10,
+      userData: {
+        email: '',
+        password: '',
+        age: 27
+      },
     }
   },
 }
