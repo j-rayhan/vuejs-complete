@@ -49,6 +49,7 @@
                 name="css"
                 id="css"
                 value="css"
+                v-model="language"
               > CSS
             </label>
             <label for="vue">
@@ -57,6 +58,7 @@
                 name="vue"
                 id="vue"
                 value="vue"
+                v-model="language"
               > VUE
             </label>
           </div>
@@ -106,7 +108,7 @@
           <p style="white-space: pre">Message: {{ message }}</p>
           <p>For? </p>
           <ul>
-            <li></li>
+            <li v-for="l in language">{{ l }}</li>
           </ul>
           <p>Gender: </p>
           <p>Priority: </p>
@@ -125,7 +127,9 @@ export default {
         password: '',
         age: 27
       },
-      message: 'A new text'
+      message: 'A new text',
+      language: [],
+
     }
   },
 }
