@@ -9,9 +9,10 @@
             <input 
               type="text"
               id="email"
-              v-model="userData.email"
+              v-model.lazy="userData.email"
               class="form-control"
             >
+            <p> {{ userData.email }} </p>
           </div>
           <div class="form-group">
             <label for="password">Password:</label>
