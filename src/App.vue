@@ -12,7 +12,6 @@
               v-model.lazy="userData.email"
               class="form-control"
             >
-            <p> {{ userData.email }} </p>
           </div>
           <div class="form-group">
             <label for="password">Password:</label>
@@ -37,6 +36,7 @@
             <textarea 
             name="message"
             id="message" 
+            v-model="message" 
             cols="30" 
             rows="5"
             class="form-control"
@@ -103,7 +103,7 @@
           <p>Mail: {{ userData.email }} </p>
           <p>Password: {{ userData.password }}</p>
           <p>Age: {{ userData.age }} </p>
-          <p>Message: </p>
+          <p style="white-space: pre">Message: {{ message }}</p>
           <p>For? </p>
           <ul>
             <li></li>
@@ -125,6 +125,7 @@ export default {
         password: '',
         age: 27
       },
+      message: 'A new text'
     }
   },
 }
