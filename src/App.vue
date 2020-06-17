@@ -66,7 +66,7 @@
             <label for="male">
               <input 
                 type="radio"
-                name="gender"
+                v-model="gender"
                 id="male"
                 value="Male"
               > Male
@@ -74,7 +74,7 @@
             <label for="female">
               <input 
                 type="radio"
-                name="gender"
+                v-model="gender"
                 id="female"
                 value="Female"
               > Female
@@ -110,7 +110,7 @@
           <ul>
             <li v-for="l in language">{{ l }}</li>
           </ul>
-          <p>Gender: </p>
+          <p>Gender: {{ gender }} </p>
           <p>Priority: </p>
         </div>
       </div>
@@ -129,6 +129,7 @@ export default {
       },
       message: 'A new text',
       language: [],
+      gender: 'Male',
 
     }
   },
