@@ -1,14 +1,14 @@
 <template>
   <div>
    <div
-    @click="isOn = true"
-    :class="{active: isOn}"
+    @click="switched(true)"
+    :class="{active: value}"
     id="on">
     ON
    </div>
    <div
-    @click="isOn = false"
-    :class="{active: !isOn}"
+    @click="switched(false)"
+    :class="{active: !value}"
     id="off">
     OFF
     </div>
@@ -17,9 +17,10 @@
 
 <script>
 export default {
- data(){
-  return {
-   isOn: true
+ props: ['value'],
+ methods: {
+  switched(isOn){
+   this.$emit('input', isOn)
   }
  }
 }

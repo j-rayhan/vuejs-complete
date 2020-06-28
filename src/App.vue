@@ -96,7 +96,7 @@
           class="btn btn-primary">
             Submit
           </button>
-          <app-switch></app-switch>
+          <app-switch v-model="dataSwitch"></app-switch>
       </form>
       <hr>
       <div class="panel panel-default">
@@ -114,6 +114,7 @@
           </ul>
           <p>Gender: {{ gender }} </p>
           <p>Priority: </p>
+          <p>Switched: {{ dataSwitch }}</p>
         </div>
       </div>
     </div>
@@ -133,7 +134,7 @@ export default {
       message: 'A new text',
       language: [],
       gender: 'Male',
-
+      dataSwitch: true
     }
   },
   components: {
