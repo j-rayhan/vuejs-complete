@@ -96,6 +96,7 @@
           class="btn btn-primary">
             Submit
           </button>
+          <app-switch></app-switch>
       </form>
       <hr>
       <div class="panel panel-default">
@@ -120,6 +121,7 @@
 </template>
 
 <script>
+import Switch from './components/Switch'
 export default {
   data() {
     return {
@@ -134,6 +136,9 @@ export default {
 
     }
   },
+  components: {
+    appSwitch: Switch
+  }
 }
 </script>
 
