@@ -91,15 +91,16 @@
               <option value=""></option>
             </select>
           </div>
-          <button 
-          type="submit" 
-          class="btn btn-primary">
+          <app-switch v-model="dataSwitch"></app-switch>
+          <button
+            @click.prevent="submitted"
+            type="submit"
+            class="btn btn-primary">
             Submit
           </button>
-          <app-switch v-model="dataSwitch"></app-switch>
       </form>
       <hr>
-      <div class="panel panel-default">
+      <div class="panel panel-default" v-if="isSubmitted">
         <div class="panel-heading">
           <h4>Your Data</h4>
         </div>
@@ -134,7 +135,13 @@ export default {
       message: 'A new text',
       language: [],
       gender: 'Male',
-      dataSwitch: true
+      dataSwitch: true,
+      isSubmitted: false
+    }
+  },
+  methods: {
+    submitted() {
+      this.isSubmitted = true
     }
   },
   components: {
