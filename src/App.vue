@@ -14,6 +14,10 @@
         <p v-highlight:background.delayed="'yellow'">Color this</p>
         <p v-highlight:background="'red'">Color this</p>
         <p v-highlight="'green'">Color this</p>
+        <hr>
+        
+        <p v-local-highlight:background.delayed="'green'">Local Color this</p>
+        <p v-local-highlight:background="'red'">Local Color this</p>
       </div>
     </div>
   </div>
@@ -22,27 +26,22 @@
 <script>
 import Switch from './components/Switch'
 export default {
-  data() {
-    return {
-      userData: {
-        email: '',
-        password: '',
-        age: 27
-      },
-      message: 'A new text',
-      language: [],
-      gender: 'Male',
-      dataSwitch: true,
-      isSubmitted: false
+  directives: {
+    'local-highlight': {
+      bind(el, binding, vnode) {
+    // el.style.backgroundColor = 'green'
+      let delay = 0;
+      if (binding.modifiers['delayed']) delay = 3000;
+        setTimeout(() => {
+          if (binding.arg === 'background') {
+            el.style.backgroundColor = binding.value
+          } else {
+            el.style.color = binding.value 
+            el.style.fontSize = '36px'
+          }
+        }, delay);
+      }
     }
-  },
-  methods: {
-    submitted() {
-      this.isSubmitted = true
-    }
-  },
-  components: {
-    appSwitch: Switch
   }
 }
 </script>
