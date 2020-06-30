@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <h1>Filters && Mixins</h1>
-      <p>{{ text | toUpperCase }}</p>
+      <p>{{ text | toUpperCase | to-LowerCase }}</p>
     </div>
   </div>
 </template>
