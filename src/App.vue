@@ -8,11 +8,14 @@
       <ul>
         <li v-for="fruit in filteredFruits" :key="fruit">{{ fruit }}</li>
       </ul>
+      <hr>
+      <app-list></app-list>
     </div>
   </div>
 </template>
 
 <script>
+import List from './components/List'
 export default {
   data() {
     return {
@@ -30,6 +33,9 @@ export default {
     filteredFruits () {
       return this.fruits.filter(e => e.match(this.filterText))
     }
+  },
+  components: {
+    appList: List
   }
 }
 </script>
