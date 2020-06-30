@@ -16,22 +16,17 @@
 
 <script>
 import List from './components/List'
+import { fruitMixin } from "./fruitMixin";
 export default {
+  mixins: [fruitMixin],
   data() {
     return {
-      text: "Hello there!",
-      filterText: '',
-      fruits: [ 'Apple', 'Banana', 'Mango', 'Melon']
+      text: "Hello there!"
     }
   },
   filters: {
     toUpperCase(value){
       return value.toUpperCase();
-    }
-  },
-  computed: {
-    filteredFruits () {
-      return this.fruits.filter(e => e.match(this.filterText))
     }
   },
   components: {
