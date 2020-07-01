@@ -2,28 +2,17 @@
   <div class="container">
     <div class="row">
       <h1>Routes</h1>
+      <app-header></app-header>
       <router-view></router-view>
     </div>
   </div>
 </template>
 
 <script>
-import List from './components/List'
-import { fruitMixin } from "./fruitMixin";
+import Header from './Header'
 export default {
-  mixins: [fruitMixin],
-  data() {
-    return {
-      text: "Hello there!"
-    }
-  },
-  filters: {
-    toUpperCase(value){
-      return value.toUpperCase();
-    }
-  },
   components: {
-    appList: List
+    appHeader: Header
   }
 }
 </script>
