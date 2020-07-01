@@ -1,16 +1,8 @@
 <template>
   <div class="container">
     <div class="row">
-      <h1>Filters && Mixins</h1>
-      <p>{{ text | toUpperCase | to-LowerCase }}</p>
-      <hr>
-      <button @click="fruits.push('Berries')">Add new</button>
-      <input type="text" v-model="filterText">
-      <ul>
-        <li v-for="fruit in filteredFruits" :key="fruit">{{ fruit }}</li>
-      </ul>
-      <hr>
-      <app-list></app-list>
+      <h1>Routes</h1>
+      <router-view></router-view>
     </div>
   </div>
 </template>
